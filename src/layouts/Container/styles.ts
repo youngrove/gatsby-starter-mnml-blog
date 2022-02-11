@@ -22,7 +22,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex: 1;
-  padding: 0 20px 0 20px;
+  padding: 20px 20px 0 20px;
 `;
 
 export const Wrapper = styled.div`
@@ -32,8 +32,12 @@ export const Wrapper = styled.div`
 `;
 
 export const GlobalStyle = createGlobalStyle`
-  body{
-    margin:0
+  body {
+    margin:0;
+    padding:0;
+  }
+  pre {
+    overflow:scroll;
   }
   @media screen and (max-width:768px) {
     html { 
