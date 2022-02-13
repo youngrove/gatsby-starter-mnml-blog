@@ -39,6 +39,9 @@ export const GlobalStyle = createGlobalStyle`
   pre {
     overflow:scroll;
   }
+  a {
+    text-decoration:none;
+  }
   .utterances{
     max-width:100%
   }

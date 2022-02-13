@@ -10,7 +10,6 @@ export const GitHubIcon = styled(Github)`
 export const BlogName = styled.a`
   color: #fff;
   font-size: 20px;
-  text-decoration: none;
   flex: none;
 `;
 

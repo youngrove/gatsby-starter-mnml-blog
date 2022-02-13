@@ -10,7 +10,6 @@ const largeTag = css`
 
 export const Wrapper = styled(Link)<{ $count: number }>`
   ${({ $count }) => css`
-    text-decoration: none;
     color: #000;
     line-height: 1.7;
     ${$count === 1 && `color:#888`}

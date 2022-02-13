@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const PostTitle = styled.a`
-  text-decoration: none;
   color: #3a3a3a;
 `;
 
