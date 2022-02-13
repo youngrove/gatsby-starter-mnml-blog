@@ -9,14 +9,15 @@ import media from "../../styles/media";
 
 interface ContainerProps {
   title?: string;
+  gitUrl?: string;
   children?: ReactNode;
 }
-const Container = ({ title, children }: ContainerProps) => {
+const Container = ({ title, gitUrl, children }: ContainerProps) => {
   return (
     <ThemeProvider theme={media}>
       <Wrapper>
         <GlobalStyle theme={media} />
-        <Header title={title}></Header>
+        <Header title={title} gitUrl={gitUrl}></Header>
         <ContentWrapper>
           <Section>
             <Main>{children}</Main>

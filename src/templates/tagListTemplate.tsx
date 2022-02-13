@@ -12,10 +12,11 @@ interface TagListTemplateProps {
 
 const TagListTemplate = ({ pageContext, data }: TagListTemplateProps) => {
   const siteTitle = data.site.siteMetadata?.title;
+  const gitUrl = data.site.siteMetadata.gitUrl;
   const posts = data.allMdx.edges;
 
   return (
-    <Container title={siteTitle}>
+    <Container title={siteTitle} gitUrl={gitUrl}>
       <ArchiveWrapper>TAG ARCHIVES: #{pageContext.tag}</ArchiveWrapper>
       {posts.map((item: any) => (
         <Post
@@ -36,6 +37,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        gitUrl
       }
     }
     allMdx(filter: { frontmatter: { tags: { in: $tag } } }) {

@@ -9,10 +9,32 @@ export interface PageContext {
   tag: string;
 }
 
+export interface IndexQuery {
+  site: {
+    siteMetadata: {
+      title: string;
+      gitUrl: string;
+    };
+  };
+  allMdx: {
+    edges: {
+      node: {
+        excerpt: string;
+        fields: {
+          slug: string;
+        };
+        frontmatter: Frontmatter;
+      };
+    }[];
+  };
+}
+
 export interface BlogPostQuery {
   site: {
     siteMetadata: {
       title: string;
+      gitUrl: string;
+      utterances: string;
     };
   };
   mdx: {
@@ -26,6 +48,7 @@ export interface tagListQuery {
   site: {
     siteMetadata: {
       title: string;
+      gitUrl: string;
     };
   };
   allMdx: {

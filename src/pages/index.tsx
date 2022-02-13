@@ -1,18 +1,16 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import Container from "../layouts/Container";
 import Post from "../components/Post";
 import Seo from "../components/Seo/Seo";
+import { IndexQuery } from "../types";
 
-interface IndexProps {
-  data: GatsbyTypes.IndexPageQuery;
-}
-
-const Index = ({ data }: IndexProps) => {
-  const siteTitle = data.site?.siteMetadata?.title as string;
+const Index = ({ data }: PageProps<IndexQuery>) => {
+  const siteTitle = data.site.siteMetadata.title;
+  const gitUrl = data.site.siteMetadata.gitUrl;
   const posts = data.allMdx.edges;
   return (
-    <Container title={siteTitle}>
+    <Container title={siteTitle} gitUrl={gitUrl}>
       <Seo title={siteTitle} />
       {posts.map((item: any) => (
         <Post
@@ -33,12 +31,13 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        gitUrl
       }
     }
     allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt(pruneLength: 300)
+          excerpt(pruneLength: 200)
           fields {
             slug
           }

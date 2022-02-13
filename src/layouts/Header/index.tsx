@@ -1,12 +1,16 @@
 import React from "react";
 import { BlogName, GitHubIcon, NavBar, Wrapper } from "./styles";
 
-const Header = ({ title }: { title?: string }) => {
+interface HeaderProps {
+  title?: string;
+  gitUrl?: string;
+}
+const Header = ({ title, gitUrl }: HeaderProps) => {
   return (
     <Wrapper>
       <NavBar>
         <BlogName href="/">{title}</BlogName>
-        <a href="/">
+        <a href={gitUrl}>
           <GitHubIcon />
         </a>
       </NavBar>
