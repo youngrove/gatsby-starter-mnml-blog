@@ -6,7 +6,12 @@ const Footer = () => {
     <Wrapper>
       <FooterBar>
         <Copyright>Younghun Ban © 2022</Copyright>
-        <Trademarks>Powered by gatsby-starter-mnml-blog</Trademarks>
+        <a
+          href="https://github.com/youngban/gatsby-starter-mnml-blog"
+          aria-label="git_repo"
+        >
+          <Trademarks>Powered by gatsby-starter-mnml-blog</Trademarks>
+        </a>
       </FooterBar>
     </Wrapper>
   );

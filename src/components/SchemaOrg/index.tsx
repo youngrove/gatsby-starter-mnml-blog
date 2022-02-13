@@ -74,7 +74,7 @@ const SchemaOrg = ({
           },
           mainEntityOfPage: {
             "@type": "WebSite",
-            "@id": url,
+            "@id": canonicalUrl,
           },
           dataPublished,
         },

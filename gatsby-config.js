@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Gatsby Starter Mnml Blog",
     siteUrl: "https://mnmlblog.gatsbyjs.io/",
-    description: "the most minimal Gatsby starter for Blog",
+    description: "The most minimal Gatsby starter for Blog",
     headline: "Writing and publishing content for devyoung", // Headline for schema.org JSONLD
     gitUrl: "https://github.com/youngban",
     lang: "en",

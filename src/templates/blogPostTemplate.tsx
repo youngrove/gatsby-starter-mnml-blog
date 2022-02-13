@@ -13,6 +13,7 @@ const BlogPostTemplates = ({ data, path }: PageProps<BlogPostQuery>) => {
   const utterances_repo = data.site.siteMetadata.utterances;
   const siteTitle = data.site.siteMetadata.title;
   const gitUrl = data.site.siteMetadata.gitUrl;
+  const title = post.frontmatter.title;
   const tagList = post.frontmatter.tags;
   const description = post.frontmatter.description;
   const content = post.body;
@@ -21,7 +22,7 @@ const BlogPostTemplates = ({ data, path }: PageProps<BlogPostQuery>) => {
   return (
     <Container title={siteTitle} gitUrl={gitUrl}>
       <Seo
-        title={siteTitle}
+        title={title}
         isPosting={true}
         desc={description}
         pathname={path}
