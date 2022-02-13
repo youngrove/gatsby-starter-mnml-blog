@@ -10,7 +10,7 @@ interface SeoProps {
 }
 const Seo = ({ description = "", lang = "en", meta = [], title }: SeoProps) => {
   const site = useSeo();
-  console.log(site);
+
   return (
     <Helmet
       htmlAttributes={{ lang }}

@@ -6,19 +6,23 @@ import PostInfo from "../components/PostInfo";
 import PostTags from "../components/PostTags";
 import Seo from "../components/Seo/Seo";
 import { BlogPostQuery } from "../types/index";
+import Utterances from "../components/Utterances";
 
 const BlogPostTemplates = ({ data }: PageProps<BlogPostQuery>) => {
-  const siteTitle = data.site.siteMetadata.title;
   const post = data.mdx;
-  const content = post.body;
+  const utterances_repo = data.site.siteMetadata.utterances;
+  const siteTitle = data.site.siteMetadata.title;
+  const gitUrl = data.site.siteMetadata.gitUrl;
   const tagList = post.frontmatter.tags;
+  const content = post.body;
 
   return (
-    <Container title={siteTitle}>
+    <Container title={siteTitle} gitUrl={gitUrl}>
       <Seo title={siteTitle} />
       <PostInfo frontmatter={post?.frontmatter} />
       <MDXRenderer>{content}</MDXRenderer>
       <PostTags tags={tagList}></PostTags>
+      <Utterances repo={utterances_repo}></Utterances>
     </Container>
   );
 };
@@ -30,6 +34,8 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        gitUrl
+        utterances
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {

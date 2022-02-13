@@ -19,7 +19,12 @@ export const Wrapper = styled.div`
   }
   &&& {
     ${({ theme }) => theme.laptop`
-    padding:30px 0 30px 0;
+    &:first-child {
+      padding: 0 0 30px 0;
+    }
+    &:not(:first-child) {
+      padding: 30px 0 30px 0;
+    }
   `}
   }
 `;

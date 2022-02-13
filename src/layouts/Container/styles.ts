@@ -39,6 +39,9 @@ export const GlobalStyle = createGlobalStyle`
   pre {
     overflow:scroll;
   }
+  .utterances{
+    max-width:100%
+  }
   @media screen and (max-width:768px) {
     html { 
     font-size:14px;

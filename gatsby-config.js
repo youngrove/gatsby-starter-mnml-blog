@@ -4,6 +4,7 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     description: "Gatsby starter blog",
     gitUrl: "https://github.com/youngban",
+    utterances: "youngban/gatsby-starter-mnml-comments",
   },
   plugins: [
     {
