@@ -8,7 +8,7 @@ export const TagWrapper = styled.h2`
 `;
 
 export const Wrapper = styled.aside`
-  flex-grow: 3;
+  flex: 1 1 0;
   && {
     ${({ theme }) => theme.laptop`
     flex:1;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
-  flex-grow: 7;
+  flex: 4 1 0;
   && {
     ${({ theme }) => theme.laptop`
     flex:1;

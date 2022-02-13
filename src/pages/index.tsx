@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 import Container from "../layouts/Container";
 import Post from "../components/Post";
-import Seo from "../components/Seo/Seo";
+import Seo from "../components/Seo/index";
 import { IndexQuery } from "../types";
 
 const Index = ({ data }: PageProps<IndexQuery>) => {

@@ -1,12 +1,13 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Post from "../components/Post";
+import Seo from "../components/Seo";
 import Container from "../layouts/Container";
 import { ArchiveWrapper } from "../layouts/Container/styles";
-import { PageContext, tagListQuery } from "../types/index";
+import { PageContext, TagListQuery } from "../types/index";
 
 interface TagListTemplateProps {
-  data: tagListQuery;
+  data: TagListQuery;
   pageContext: PageContext;
 }
 
@@ -17,6 +18,7 @@ const TagListTemplate = ({ pageContext, data }: TagListTemplateProps) => {
 
   return (
     <Container title={siteTitle} gitUrl={gitUrl}>
+      <Seo title={siteTitle}></Seo>
       <ArchiveWrapper>TAG ARCHIVES: #{pageContext.tag}</ArchiveWrapper>
       {posts.map((item: any) => (
         <Post

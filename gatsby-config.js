@@ -1,9 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: "< Devyoung />",
-    siteUrl: "https://www.yourdomain.tld",
-    description: "Gatsby starter blog",
+    title: "Gatsby Starter Mnml Blog",
+    siteUrl: "https://mnmlblog.gatsbyjs.io/",
+    description: "the most minimal Gatsby starter for Blog",
+    headline: "Writing and publishing content for devyoung", // Headline for schema.org JSONLD
     gitUrl: "https://github.com/youngban",
+    siteLanguage: "en",
+    image: "/logo/logo.png",
+    author: "devyoung",
+    organization: {
+      url: "https://github.com/youngban/gatsby-starter-mnml-blog",
+      logo: "/logo/logo.png",
+    },
+    ogLanguage: "en_US",
     utterances: "youngban/gatsby-starter-mnml-comments",
   },
   plugins: [
@@ -39,17 +48,10 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-transformer-sharp`,
-    },
-    {
-      resolve: `gatsby-plugin-typescript`,
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-    },
-    {
-      resolve: `gatsby-plugin-no-sourcemaps`,
-    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-no-sourcemaps`,
+    `gatsby-plugin-react-helmet`,
   ],
 };

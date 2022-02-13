@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
+import { TagsQuery } from "../types";
 
 interface TagList {
   [key: string]: number;
@@ -7,7 +8,7 @@ export const useTopTag = () => {
   let tagList: TagList = {};
   const {
     allMdx: { edges },
-  } = useStaticQuery<GatsbyTypes.TagsQuery>(graphql`
+  } = useStaticQuery<TagsQuery>(graphql`
     query Tags {
       allMdx(filter: { frontmatter: { tags: { ne: null } } }) {
         edges {
@@ -21,7 +22,7 @@ export const useTopTag = () => {
     }
   `);
   edges.map(({ node: { frontmatter } }) => {
-    if (frontmatter && frontmatter.tags) {
+    if (frontmatter.tags) {
       frontmatter.tags.forEach((item) => {
         if (item !== undefined) {
           tagList[item] = (tagList[item] || 0) + 1;

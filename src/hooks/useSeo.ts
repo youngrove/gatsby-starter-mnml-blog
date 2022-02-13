@@ -1,12 +1,21 @@
 import { graphql, useStaticQuery } from "gatsby";
+import { SeoQuery } from "../types";
 
 export const useSeo = () => {
-  const { site } = useStaticQuery<GatsbyTypes.SeoQuery>(graphql`
+  const { site } = useStaticQuery<SeoQuery>(graphql`
     query Seo {
       site {
         siteMetadata {
-          title
-          description
+          siteUrl
+          siteLanguage
+          defaultTitle: title
+          defaultDescription: description
+          defaultImage: image
+          author
+          organization {
+            url
+            logo
+          }
         }
       }
     }
