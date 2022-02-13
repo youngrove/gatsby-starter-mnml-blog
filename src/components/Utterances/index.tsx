@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from "react";
 
 const Utterances = ({ repo }: { repo: string }) => {
   const commentRef = useRef<HTMLDivElement>(null);
-  const utterances = document.createElement("script");
 
   useEffect(() => {
     if (!commentRef.current) return;
+    const utterances = document.createElement("script");
     const utterancesConfig = {
       src: "https://utteranc.es/client.js",
       repo: repo,
