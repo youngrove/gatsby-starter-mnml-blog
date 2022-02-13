@@ -68,7 +68,7 @@ export interface SeoQuery {
   site: {
     siteMetadata: {
       siteUrl: string;
-      siteLanguage: string;
+      lang: string;
       defaultTitle: string;
       defaultDescription: string;
       defaultImage: string;

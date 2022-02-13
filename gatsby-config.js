@@ -5,7 +5,7 @@ module.exports = {
     description: "the most minimal Gatsby starter for Blog",
     headline: "Writing and publishing content for devyoung", // Headline for schema.org JSONLD
     gitUrl: "https://github.com/youngban",
-    siteLanguage: "en",
+    lang: "en",
     image: "/logo/logo.png",
     author: "devyoung",
     organization: {

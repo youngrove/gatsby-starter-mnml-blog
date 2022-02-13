@@ -7,7 +7,7 @@ export const useSeo = () => {
       site {
         siteMetadata {
           siteUrl
-          siteLanguage
+          lang
           defaultTitle: title
           defaultDescription: description
           defaultImage: image

@@ -10,7 +10,7 @@ const Header = ({ title, gitUrl }: HeaderProps) => {
     <Wrapper>
       <NavBar>
         <BlogName href="/">{title}</BlogName>
-        <a href={gitUrl}>
+        <a href={gitUrl} aria-label="github">
           <GitHubIcon />
         </a>
       </NavBar>

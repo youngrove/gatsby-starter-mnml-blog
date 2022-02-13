@@ -23,7 +23,7 @@ const Seo = ({
   const {
     siteMetadata: {
       siteUrl,
-      siteLanguage,
+      lang,
       defaultTitle,
       defaultDescription,
       defaultImage,
@@ -32,6 +32,7 @@ const Seo = ({
     },
   } = site;
   const seo = {
+    title: title || defaultTitle,
     description: desc || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname || ""}`,
@@ -40,12 +41,15 @@ const Seo = ({
   return (
     <>
       <Helmet
-        htmlAttributes={{ siteLanguage }}
+        htmlAttributes={{ lang }}
         title={title}
         defaultTitle={defaultTitle}
       >
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={seo.image} />
       </Helmet>
       <SchemaOrg
         title={title}
