@@ -44,7 +44,7 @@ export interface BlogPostQuery {
   };
 }
 
-export interface tagListQuery {
+export interface TagListQuery {
   site: {
     siteMetadata: {
       title: string;
@@ -58,6 +58,33 @@ export interface tagListQuery {
         fields: {
           slug: string;
         };
+        frontmatter: Frontmatter;
+      };
+    }[];
+  };
+}
+
+export interface SeoQuery {
+  site: {
+    siteMetadata: {
+      siteUrl: string;
+      siteLanguage: string;
+      defaultTitle: string;
+      defaultDescription: string;
+      defaultImage: string;
+      author: string;
+      organization: {
+        url: string;
+        logo: string;
+      };
+    };
+  };
+}
+
+export interface TagsQuery {
+  allMdx: {
+    edges: {
+      node: {
         frontmatter: Frontmatter;
       };
     }[];
