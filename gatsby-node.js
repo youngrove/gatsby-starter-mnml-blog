@@ -46,6 +46,23 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     });
   }
 
+  const postPerPage = 1;
+  const numPages = Math.ceil(posts.length / postPerPage);
+
+  const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.tsx`);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/` : `/${i + 1}`,
+      component: blogListTemplate,
+      context: {
+        limit: postPerPage,
+        skip: i * postPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    });
+  });
+
   const tagListTemplate = path.resolve(`./src/templates/tagListTemplate.tsx`);
   if (tags.size > 0) {
     tags.forEach((tag) => {

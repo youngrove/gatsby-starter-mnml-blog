@@ -6,10 +6,14 @@ export interface Frontmatter {
 }
 
 export interface PageContext {
-  tag: string;
+  tag?: string;
+  skip?: number;
+  limit?: number;
+  numPages?: number;
+  currentPage?: number;
 }
 
-export interface IndexQuery {
+export interface BlogListQuery {
   site: {
     siteMetadata: {
       title: string;

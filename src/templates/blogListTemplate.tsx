@@ -1,14 +1,21 @@
 import React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql } from "gatsby";
 import Container from "../layouts/Container";
 import Post from "../components/Post";
 import Seo from "../components/Seo/index";
-import { IndexQuery } from "../types";
+import { BlogListQuery, PageContext } from "../types";
+import Pagination from "../components/Pagination";
 
-const Index = ({ data }: PageProps<IndexQuery>) => {
+interface BlogListTemplateProps {
+  data: BlogListQuery;
+  pageContext: PageContext;
+}
+
+const BlogListTemplate = ({ pageContext, data }: BlogListTemplateProps) => {
   const siteTitle = data.site.siteMetadata.title;
   const gitUrl = data.site.siteMetadata.gitUrl;
   const posts = data.allMdx.edges;
+
   return (
     <Container title={siteTitle} gitUrl={gitUrl}>
       <Seo title={siteTitle} />
@@ -20,21 +27,30 @@ const Index = ({ data }: PageProps<IndexQuery>) => {
           excerpt={item.node.excerpt}
         />
       ))}
+      <Pagination
+        skip={pageContext.skip}
+        numPages={pageContext.numPages}
+        currentPage={pageContext.currentPage}
+      />
     </Container>
   );
 };
 
-export default Index;
+export default BlogListTemplate;
 
 export const query = graphql`
-  query IndexPage {
+  query BlogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
         gitUrl
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt(pruneLength: 200)

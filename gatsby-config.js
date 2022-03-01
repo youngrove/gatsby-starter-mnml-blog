@@ -33,7 +33,7 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/,
+          include: /assets|images/,
         },
       },
     },
@@ -44,6 +44,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {},
+          },
+          {
+            resolve: `gatsby-remark-images`,
           },
         ],
       },
