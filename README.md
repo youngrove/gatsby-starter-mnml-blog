@@ -9,7 +9,7 @@
 <div align="center">
 <a href="https://www.styled-components.com/"><img src="https://badgen.net/badge/Built%20With/styled%20components/db7093" alt="Built with Styled Components" />
 </a>
-<a href=''>
+<a href='https://www.typescriptlang.org/'>
 <img src="https://badgen.net/badge/Built With/TypeScript/blue" alt="Powered by TypeScript" />
 </a>
 <a href="https://github.com/youngban/gatsby-starter-mnml-blog/blob/main/LICENSE">
@@ -17,8 +17,9 @@
 Public is released under the 0BSD license." />
 </a>
 </div>
+<br />
 
-## A Starter template to build The Most Minimal Blog with TypeScript & Styled Components.
+A Starter template to build The Most Minimal Blog with TypeScript & Styled Components.
 
 ## 🏄 Getting Started
 
