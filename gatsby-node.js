@@ -6,6 +6,7 @@ require("ts-node").register({
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const { toUrl } = require("./src/utils/converter");
+const { POST_PER_PAGE } = require("./src/config");
 
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   const result = await graphql(`
@@ -46,8 +47,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     });
   }
 
-  const postPerPage = 1;
-  const numPages = Math.ceil(posts.length / postPerPage);
+  const numPages = Math.ceil(posts.length / POST_PER_PAGE);
 
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.tsx`);
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -55,8 +55,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: i === 0 ? `/` : `/${i + 1}`,
       component: blogListTemplate,
       context: {
-        limit: postPerPage,
-        skip: i * postPerPage,
+        limit: POST_PER_PAGE,
+        skip: i * POST_PER_PAGE,
         numPages,
         currentPage: i + 1,
       },

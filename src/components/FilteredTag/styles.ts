@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "gatsby";
+import { TAG_SMALL, TAG_MEDIUM, TAG_LARGE } from "../../config";
 
 const largeTag = css`
   font-size: 1.25rem;
@@ -12,8 +13,8 @@ export const Wrapper = styled(Link)<{ $count: number }>`
   ${({ $count }) => css`
     color: #000;
     line-height: 1.7;
-    ${$count === 1 && `color:#888`}
-    ${$count > 2 && largeTag}
-    ${$count > 4 && `${largeTag} font-weight:700`}
+    ${$count === TAG_SMALL && `color:#888`}
+    ${$count >= TAG_MEDIUM && largeTag}
+    ${$count > TAG_LARGE && `${largeTag} font-weight:700`}
   `}
 `;
