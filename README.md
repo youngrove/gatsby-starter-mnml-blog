@@ -25,7 +25,7 @@ A Starter template to build The Most Minimal Blog with TypeScript & Styled Compo
 
 I tend to pursue minimalism in my daily life. It is one of my philosophy of life to minimize the number of cases and focus on essential parts.
 
-While making this starter, I tried to minimize the design and functionality.
+While making this starter, I tried to minimize the design and functionality.  
 For example, Instead of using the About page, I wanted to focus more on managing my Github profile. therefore I have placed a button in the navigation that takes to Github profile.
 Also, rather than manually dividing categories, it is designed to automatically categorize items containing a lot of tags.
 
@@ -36,7 +36,7 @@ In addition, I considered component reusability and tried to keep the logic conc
 - Typography driven design
 - Gatsby v4 Supports
 - Utterances Supports
-- Tags Supports
+- Tags
 - Pagination
 - SEO
 - MDX
