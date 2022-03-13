@@ -4,7 +4,7 @@ module.exports = {
     siteUrl: "https://mnmlblog.gatsbyjs.io/",
     description: "The most minimal Gatsby starter for Blog",
     headline: "Writing and publishing content for devyoung", // Headline for schema.org JSONLD
-    gitUrl: "https://github.com/youngban",
+    gitUrl: "https://github.com/youngban", // Your git profile link
     lang: "en",
     image: "/logo/logo.png",
     author: "devyoung",
@@ -13,7 +13,7 @@ module.exports = {
       logo: "/logo/logo.png",
     },
     ogLanguage: "en_US",
-    utterances: "youngban/gatsby-starter-mnml-comments",
+    utterances: "youngban/gatsby-starter-mnml-comments", // Your repository for utterances comment
   },
   plugins: [
     {
