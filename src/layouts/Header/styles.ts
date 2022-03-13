@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Github from "../../../content/assets/git.svg";
+import Github from "../../images/git.svg";
 
 export const GitHubIcon = styled(Github)`
   width: 30px;
